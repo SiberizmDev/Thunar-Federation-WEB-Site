@@ -1,0 +1,19 @@
+---
+import { SITE } from '~/config.mjs';
+
+import { getCanonical, getHomePermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+import Note from '~/components/widgets/EditionsNote.astro';
+import Editions from '~/components/widgets/Editions.astro';
+
+const meta = {
+  title: `İndir`,
+  description: `Find a suitable ${SITE.name} edition for your hardware.`,
+  canonical: getCanonical(getHomePermalink()),
+};
+---
+
+<Layout {meta}>
+  <Note />
+  <Editions />
+</Layout>

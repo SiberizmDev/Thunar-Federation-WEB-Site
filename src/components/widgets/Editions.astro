@@ -1,0 +1,63 @@
+---
+import { Image } from '@astrojs/image/components';
+import DropdownMenu from '~/components/widgets/DropdownMenu'
+
+const items = [
+  [
+    {
+      title: 'v1.0 Alpha',
+      description:
+        'İlk defa kullanıcılara açılan sürüm',
+      direct_url: 'https://cdn.discordapp.com/attachments/938001122109558824/1083056839912083476/Thunar_Dock.rar',
+      srcforge_url: 'https://discord.gg/JAPEAajAmu',
+      mediafire_url: 'https://discord.gg/JAPEAajAmu',
+      gdirve_url: 'https://discord.gg/JAPEAajAmu',
+      preview: import('~/assets/images/dock.png'),
+    },
+  ],
+];
+
+---
+
+<section class="scroll-mt-16">
+  <div class="flex x-auto space-y-6 justify-center md:space-y-0 p-9">
+    {
+      items.map((subitems) => (
+        <div class="container sm:px-8 mx-auto">
+          {subitems.map(({ title, description, direct_url, srcforge_url, preview }) => (
+            <div class="flex flex-wrap items-center -m-8 my-20 pb-[calc(20vh)]">
+              <div class="w-full md:w-1/2 p-8">
+                <h2 class="mb-9 text-6xl md:text-8xl xl:text-10xl font-bold font-heading tracking-px-n leading-none">{title}</h2>
+                <p class="mb-10 text-lg text-gray-900 dark:text-slate-400 font-medium leading-relaxed md:max-w-md">{description}</p>
+                <div class="mb-11 md:inline-block rounded-xl shadow-4xl bg-primary-500 dark:bg-primary-700 dropdown">
+                  {direct_url &&
+                    <DropdownMenu client:visible data={ {title, direct_url, srcforge_url} } />
+                  }
+                  {!direct_url && !srcforge_url &&
+                    <div>
+                      <button type="button" class="btn-under-constuction py-4 px-6">Henüz Geliştirme Aşamasında</button>
+                    </div>
+                  }
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 p-8">
+                {preview &&
+                  <Image
+                    src={preview}
+                    class="transform hover:-translate-x-16 rounded-xl transition ease-in-out duration-1000"
+                    quality={100}
+                    alt=""
+                    aspectRatio={1920 / 1080}
+                    loading="eager"
+                    width={1920}
+                    height={1080}
+                  />
+                }
+              </div>
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</section>

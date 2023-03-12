@@ -1,0 +1,19 @@
+---
+import { getCanonical, getHomePermalink } from '~/utils/permalinks';
+import Layout from '~/layouts/PageLayout.astro';
+import Company from '~/components/widgets/AboutCompany.astro';
+import Team from '~/components/widgets/Team.astro';
+import Contributors from '~/components/widgets/Contributors.astro';
+
+const meta = {
+  title: `Hakkında`,
+  description: `Thunar Federasyonu hakkında daha fazla bilgiye erişin`,
+  canonical: getCanonical(getHomePermalink()),
+};
+---
+
+<Layout {meta}>
+  <Company />
+  <Team />
+  <Contributors />
+</Layout>
