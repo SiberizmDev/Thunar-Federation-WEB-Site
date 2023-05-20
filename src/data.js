@@ -51,6 +51,6 @@ export const footerData = {
   ],
   footNote: `
     <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 float-left rounded-sm bg-[url(~/assets/images/logo.svg)]"></span>
-    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://cachyos.org/"> CachyOS</a> · All rights reserved.
+    Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://kapganfederation.vercel.app/"> Kapgan Fed.</a> · All rights reserved.
   `,
 };
