@@ -1,13 +1,13 @@
 import defaultImage from './assets/images/default.png';
 
 const CONFIG = {
-  name: 'Kapgan Federasyonu',
+  name: 'Hackadia',
 
-  origin: 'https://Kapganfederation.vercel.app/',
+  origin: 'https://hackadia.vercel.app/',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'Kapgan Federasyonu ・ Siber Güvenlik ve Modern Tasarımın Öncüleri',
+  title: 'Hackadia ・ Siber Güvenliğin Öncüleri',
   description:
     'Hem güvenlik, hemde yeni nesil teknolojileri içerisinde bulunduran şirketimiz ile arkadaşlarınıza hava atın',
   defaultImage: defaultImage,
